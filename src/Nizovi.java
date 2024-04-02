@@ -20,8 +20,12 @@ public class Nizovi {
             }
             System.out.println();   // Novi prazan red
             System.out.println(Arrays.toString(niz));
+            int nizdeo []= Arrays.copyOfRange(niz, 0, 3);  // pravi kopiju niza indexe 0, 1 i 2 [55,8,9]
+            System.out.println(Arrays.toString(nizdeo));         // printa  [55, 8, 9]
+
             Arrays.sort(niz);       //sortiram NIZ
             System.out.println(Arrays.toString(niz));   //Printam sortiran niz
+
             System.out.println("Max vrednost niza: " + (max));
             System.out.println("Min vrednost niza: " + (min));
 //----------------------------------------------------------------------------------------------------
