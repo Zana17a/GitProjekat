@@ -20,5 +20,7 @@ public class WhileLoop_Cas4 {
 //        while (true){
 //            System.out.println("Infinite loop!");
 //        }
+
+        //provera za git
     }
 }
