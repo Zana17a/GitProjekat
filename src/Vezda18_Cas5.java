@@ -6,50 +6,70 @@ public class Vezda18_Cas5 {
     public static void main(String[] args) {
 
         String niz[] = new String[]{"Heart", "Cherry", "Coin", "Melon", "Jocker"};
+        //definisem prazan niz u koji cu da ubacujem elemente iz zadatog niza random redom:
+        String nizRand[] = new String[niz.length];
+        // definisanje indexa novog praznog niza:
 
-        Random index = new Random();
-        String niz2[] = new String[niz.length];
+        Random rand = new Random();
+        System.out.println("Niz gde moze da ima ponovljenih elemenata: ");
+        int index;
+        for (int i = 0; i < niz.length; i++) {
+            int randomindex = rand.nextInt(niz.length);
+            System.out.print(" " + niz[randomindex]);}
+        System.out.println();
 
-        int index1 = index.nextInt(niz.length);
-        int index2;
-        int index3;
-        int index4;
-        int index5;
-        niz2[0] = niz[index1];
+            int index0 = rand.nextInt(niz.length); //nultom indeu dodeljujem random broj od 0-4 (duzina niza 5)
+            int index1;
+            int index2;
+            int index3;
+            int index4;
 
-        while (true) {
-            index2 = index.nextInt(niz.length);
-            if (index2 != index1) {
-                niz2[1] = niz[index2];
-                break;
+            nizRand[0] = niz[index0]; //novom nizu dodelim na nultom indexu element iz zadatog niza sa random pozicije
+
+            // na indexu 1 novog niza dodeljujem novi element iz zadatog niza ali pazim da se razlikuje od prethodnoh elementa:
+            while (true) {
+                index1 = rand.nextInt(niz.length);
+                if (index1 != index0) {
+                    nizRand[1] = niz[index1];
+                    break;
+                }
             }
-        }
-        ;
-        while (true) {
-            index3 = index.nextInt(niz.length);
-            if (index3 != index2 && index3 != index1) {
-                niz2[2] = niz[index3];
-                break;
+            ;
+            while (true) {
+                index2 = rand.nextInt(niz.length);
+                if (index2 != index1 && index2 != index0) {
+                    nizRand[2] = niz[index2];
+                    break;
+                }
             }
-        }
-        ;
-        while (true) {
-            index4 = index.nextInt(niz.length);
-            if (index4 != index3 && index4 != index2 && index4 != index1) {
-                niz2[3] = niz[index4];
-                break;
+            ;
+            while (true) {
+                index3 = rand.nextInt(niz.length);
+                if (index3 != index2 && index2 != index1 && index3 != index0) {
+                    nizRand[3] = niz[index3];
+                    break;
+                }
             }
-        }
-        ;
-        while (true) {
-            index5 = index.nextInt(niz.length);
-            if (index5 != index4 && index5 != index3 && index5 != index2 && index5 !=index1) {
-                niz2[4] = niz[index5];
-                break;
+            ;
+            while (true) {
+                index4 = rand.nextInt(niz.length);
+                if (index4 != index3 && index4 != index2 && index4 != index1 && index4 != index0) {
+                    nizRand[4] = niz[index4];
+                    break;
+                }
             }
+            ;
+            System.out.println("Combination is: ");
+//        System.out.println(Arrays.toString(nizRand)); // ispis kao niz
+            for (int i = 0; i < nizRand.length; i++) { //ispis pojedinacnih elemenata
+                System.out.print((nizRand[i]) + " ");
+            }
+            System.out.println();
+            System.out.println(Arrays.toString(nizRand));
         }
-        ;
-        System.out.println(Arrays.toString(niz2));
+    }
+
+
 //        for (int i=0; i< niz.length; i++){
 //        int randomindex = index.nextInt(niz.length);
 //            System.out.print(" " + niz[randomindex]);
@@ -60,6 +80,4 @@ public class Vezda18_Cas5 {
 //        else System.out.print(" " + niz[zamisljenbroj]);
 //        System.out.println(Arrays.toString(niz));
 
-    }
-}
 
